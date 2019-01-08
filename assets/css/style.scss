@@ -1,0 +1,478 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700,700i|Raleway:300,300i,800,800i');
+
+
+@import 'bourbon/bourbon';
+@import 'normalize';
+@import 'padroes';
+@import 'texto';
+
+header.capa{
+	padding: 2em 0 5em;
+	background-color: $roxo;
+	p.instituicoes{
+		font-size: 0.9em;
+		text-align: center;
+		line-height: $entrelinha-menor;
+		color: $roxo-claro2;
+		margin-top: 0;
+		margin-bottom: 3rem;
+		span{
+			display: inline-block;
+			&.ponto{
+				color: $roxo-claro3;
+				&.menor{
+					display: none;
+				}
+			}
+		}
+	}
+
+	.logo-org-marcas{
+		@include display(flex);
+		@include justify-content(space-between);
+		@include align-items(stretch);
+		margin-bottom: 5rem;
+
+		img.logocurso{
+			display: block;
+			height: 15em;
+		}
+
+		div.org-e-marcas{
+			height: 15em;
+			@include display(flex);
+			@include justify-content(space-between);
+			@include flex-direction(column);
+			
+			width: 50%;
+			.org-edicao{
+				@include display(flex);
+				@include justify-content(space-between);
+				dl.organizacao{
+					margin: 0;
+					font-size: 1.5em;
+					line-height: $entrelinha-menor;
+					dt{
+						font-family: $fonte-titulo;
+						color: $laranja;
+					}
+
+					dd{
+						margin-left: 0;
+						color: white;
+					}
+				}
+
+				.edicao{
+					padding: 0.6em;
+					border: 1px solid $roxo-claro2;
+					p{
+						margin: 0;
+						font-size: 1em;
+						color: $roxo-claro3;
+						text-align: right;
+						line-height: $entrelinha-menor;
+
+					}
+				}
+			}
+
+
+			.marcas{
+				width: 100%;
+				@include display(flex);
+				@include justify-content(space-between);
+				@include align-items(center);
+				a{
+					display: block;
+					img{
+						display: block;
+						height: 2.5em;
+					}
+				}
+
+				p{
+					margin: 0;
+					font-family: $fonte-titulo;
+					color: $laranja;
+					text-transform: uppercase;
+					font-weight: bold;
+					line-height: $entrelinha-menor;
+				}
+			}
+		}
+	}
+
+	.aviso{
+		margin: 0;
+		color: $laranja;
+		text-align: center;
+		font-family: $fonte-titulo;
+	}
+}
+
+header.header{
+	padding: 1em 0 7em;
+	background-color: $roxo;
+	position: relative;
+	z-index: 3;
+
+	button.ler-artigo, a.sumario, a.next, a.prev{
+		@include  display(flex);
+		@include align-items(center);
+		@include justify-content(center);
+		background-color: $roxo-escuro;
+		color: $laranja;
+		@include transition(color 0.2s linear);
+		font-size: 0.9em;
+		line-height: 1;
+		text-transform: uppercase;
+		font-family: $fonte-titulo;
+		height: 3rem;
+		svg{
+			display: inline-block;
+			height: 0.7em;
+			margin-right: 0.5em;
+			path{
+				fill: $laranja;
+				@include transition(fill 0.2s linear);
+			}
+		}
+
+		&:hover{
+			color: white;
+			svg path{
+				fill: white;
+			}
+		}
+	}
+
+	a.next, a.prev{
+		width: 3rem;
+		svg{
+			margin-right: 0;
+		}
+	}
+
+	a.sumario{
+		text-decoration: none;
+	}
+
+	a.sumario, button.ler-artigo{
+		padding: 0 1em;
+	}
+
+	.container{
+
+		.logo-e-sumario{
+			@include display(flex);
+			@include justify-content(space-between);
+			@include align-items(flex-start);
+			margin-bottom: 3em;
+
+			a.logo{
+				height: 3.5em;
+				display: block;
+				img{
+					width: auto;
+					height: 100%;
+					display: block;
+				}
+			}
+
+			.nav{
+				@include display(flex);
+				& > *{
+					margin-right: 0.25rem;
+					&:last-child{
+						margin-right: 0;
+					}
+				}
+			}
+		}
+		
+
+		h1{
+			color: $laranja;
+			margin: 0;
+			margin-bottom: 3rem;
+			font-size: 2.5em;
+			width: 100%;
+			line-height: 1.3;
+			font-weight: 300;
+			@media (max-width: 1000px){
+				font-size: 2.2em;
+			}
+
+			@media (max-width: 640px){
+				font-size: 1.9em;
+			}
+		}
+
+		.resumo-e-mini{
+			@include display(flex);
+			@include justify-content(space-between);
+
+			.resumo{
+				width: 60%;
+				p{
+					margin: 0;
+					color: $laranja-claro;
+					b{
+						color: $laranja;
+						font-family: $fonte-titulo;
+					}
+
+					& + p{
+						margin-top: 1.5em;
+					}
+				}
+			}
+
+			.minicurriculos{
+				width: 35%;
+				h4{
+					margin: 0;
+					// margin-bottom: 1em;
+					font-size: 1em;
+					// font-family: $fonte-corpo;
+					color: $roxo-claro3;
+					font-weight: bold;
+				}
+
+				ul{
+					list-style: none;
+					padding: 0;
+					margin: 0;
+
+					& + h4{
+						margin-top: 1.5em;
+					}
+					li{
+						border-bottom: 1px solid $roxo-claro2;
+						
+						&:last-child{
+							border-bottom-width: 0px;
+						}
+						h5{
+							margin: 0;
+							font-size: 1.2em;
+							line-height: $entrelinha-menor;
+							padding: 0.25em 0;
+							padding-right: 2.5em;
+							font-weight: normal;
+							color: $laranja-claro;
+							@include transition(color 0.3s ease-in-out);
+							position: relative;
+							&:after{
+								content: '';
+								display: block;
+								position: absolute;
+								right: 0;
+								top: 50%;
+								@include transform(translateY(-50%) rotateX(0deg));
+								@include transition(transform 0.3s ease-in-out);
+								width: 1em;
+								height: 1em;
+								background-image: url(../media/arrow.svg);
+								background-size: contain;
+								background-repeat: no-repeat;
+								background-position: center center;
+							}
+
+							&:hover{
+								cursor: pointer;
+								color: $laranja;
+							}
+						}
+
+						p{
+							display: none;
+							margin: 0;
+							padding-bottom: 1em;
+							font-size: 0.9em;
+							color: $laranja-claro;
+						}
+
+						&.aberto{
+							h5{
+								color: $laranja;
+								&:after{
+									@include transform(translateY(-50%) rotateX(180deg));
+								}
+							}
+						}
+
+						// &:only-child{
+						// 	h5{
+						// 		padding-right: 0;
+						// 		color: $laranja;
+						// 		&:after{
+						// 			content: none;
+						// 		}
+						// 		&:hover{
+						// 			cursor: auto;
+						// 			color: $laranja;
+						// 		}
+						// 	}
+						// 	p{
+						// 		display: block;
+						// 	}
+						// }
+					}
+				}
+			}
+		}
+	}
+
+
+	button.ler-artigo{
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		@include transform(translateX(-50%));
+	}
+
+	&.fixo{
+		display: block;
+		position: fixed;
+		top: 0; left: 0;
+		width: 100%;
+		height: 3rem;
+		z-index: 2;
+		padding: 0;
+
+		& > .container{
+			@include display(flex);
+			@include align-items(center)
+		}
+
+		.logo-e-sumario{
+			margin-bottom: 0;
+			@include display(block);
+			@include order(2);
+
+			a.logo{
+				display: none;
+			}
+		}
+
+		h1{
+			margin-bottom: 0;
+			font-size: 1em;
+			@include order(1);
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			padding-right: 2rem;
+
+
+			@media (max-width: 1000px){
+				font-size: 1em;
+			}
+
+			@media (max-width: 640px){
+				font-size: 1em;
+			}
+		}
+
+		.resumo-e-mini{
+			display: none;
+		}
+
+		.ler-artigo{
+			display: none;
+		}
+	}
+
+}
+
+
+
+#headerfixo{
+	
+	background-color: $roxo;
+
+	.container{
+		height: 100%;
+		position: relative;
+		@include display(flex);
+		@include align-items(center);	
+		@include justify-content(flex-end);
+		h1{
+			font-size: 0.9em;
+			padding-right: 2rem;
+			font-weight: 300;
+			color: $laranja;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+		nav{
+			@include flex-shrink(0);
+			height: 100%;
+			a, button{
+				@include display(inline-flex);
+				@include align-items(center);
+				// height: calc(100% - 1rem);
+				height: 100%;
+				margin-right: 0.3rem;
+				&:last-child{
+					margin-right: 0;
+				}
+				font-family: $fonte-titulo;
+				font-size: 0.8em;
+				line-height: 1;
+				text-transform: uppercase;
+				color: $laranja;
+				background-color: $roxo-escuro;
+				@include transition(all 0.2s linear);
+				@include transition-property(color, background-color);
+				text-decoration: none;
+
+				svg{
+					display: inline-block;
+					height: 0.7em;
+					path{
+						fill: $laranja;
+						@include transition(fill 0.2s linear);
+					}
+				}
+
+				&:hover{
+					color: white;
+
+					svg path{
+						fill: white;
+					}
+				}
+			}
+
+			a{
+				width: 3rem;
+				@include justify-content(center);
+
+			}
+
+			button{
+				padding: 0 1em;
+				svg{
+					margin-right: 0.5em;
+				}
+			}
+		}
+	}
+}
+
+
+
+main{
+	position: relative;
+	margin-top: 5em;
+	article{
+		@extend .container;
+		@extend %estilo-texto;
+		padding-bottom: 10rem;
+	}
+}
+
