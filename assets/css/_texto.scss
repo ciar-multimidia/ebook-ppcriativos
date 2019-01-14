@@ -80,7 +80,7 @@
 	h5{font-family: $fonte-corpo; font-weight: bold;}
 
 	a{
-		&, &:visited, &:link{
+		&, &:link, &:visited{
 			color: $roxo-claro2;
 			text-decoration: none;
 			box-shadow: inset 0px -0.3em 0px $laranja-claro;
@@ -96,7 +96,7 @@
 
 	figure{
 		margin: 2rem 0;
-		a, a:visited{
+		a, a:link, a:visited{
 			color: inherit;
 			box-shadow: none;
 			@include transition(none);
@@ -145,7 +145,7 @@
 	}
 
 	ol,ul{
-		font-size: 0.9em;
+		font-size: 0.9rem;
 		list-style: none;
 		// line-height: $entrelinha-menor;
 		padding-left: 2.5em;
@@ -167,13 +167,37 @@
 
 	ol{
 		li{
-			counter-increment: listanumerada;
 			&:before{
-				content: counter(listanumerada)'. ';
 				margin-right: 1ch;
 				font-family: $fonte-titulo;
 				font-weight: 800;
 				color: $roxo-claro2;
+			}
+		}
+		& > li{
+			counter-increment: listanumerada1;
+			&:before{content: counter(listanumerada1) '. ' ;}
+		}
+
+		& > ol{
+			& > li{
+				counter-increment: listanumerada2;
+				&:before{content: counter(listanumerada1) '.' counter(listanumerada2);}
+
+			}
+
+			& > ol{
+				& > li{
+					counter-increment: listanumerada3;
+					&:before{content: counter(listanumerada1) '.' counter(listanumerada2) '.' counter(listanumerada3);}
+				}
+
+				& > ol{
+					& > li{
+						counter-increment: listanumerada4;
+						&:before{content: counter(listanumerada1) '.' counter(listanumerada2) '.' counter(listanumerada3) '.' counter(listanumerada4);}
+					}
+				}
 			}
 		}
 	}
@@ -228,7 +252,10 @@
 			font-size: 0.8em;
 			tr{
 				th,td{
-					
+					ul, ol{
+						font-size: 1em;
+						padding-left: 1.8em;
+					}
 				}
 				&:nth-child(even){
 					th,td{
