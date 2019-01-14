@@ -6,8 +6,14 @@
 @import 'padroes';
 @import 'texto';
 
+html{
+	&.fundo-roxo{
+		background-color: $roxo;
+	}
+}
+
 header.capa{
-	padding: 2em 0 5em;
+	padding: 2em 0 2em;
 	background-color: $roxo;
 	p.instituicoes{
 		font-size: 0.9em;
@@ -105,9 +111,139 @@ header.capa{
 
 	.aviso{
 		margin: 0;
+		margin-bottom: 2em;
 		color: $laranja;
 		text-align: center;
 		font-family: $fonte-titulo;
+	}
+
+	.bt-sumario-e-comecar{
+		@include display(flex);
+		@include justify-content(center);
+
+		& > a{
+			margin-right: 0.5rem;
+			&:last-child{
+				margin-right: 0;
+			}
+			@include  display(flex);
+			@include align-items(center);
+			@include justify-content(center);
+			background-color: $roxo-escuro;
+			color: $laranja;
+			@include transition(color 0.2s linear);
+			font-size: 0.9em;
+			text-decoration: none;
+			line-height: 1;
+			text-transform: uppercase;
+			font-family: $fonte-titulo;
+			padding: 1.2em;
+			svg{
+				display: inline-block;
+				height: 0.7em;
+				margin-right: 0.5em;
+				path{
+					fill: $laranja;
+					@include transition(fill 0.2s linear);
+				}
+			}
+
+			&:hover{
+				color: white;
+				svg path{
+					fill: white;
+				}
+			}
+		}
+	}
+}
+
+
+#sumario{
+	background-color: $roxo;
+	padding: 4em 8em;
+	h1{
+		font-size: 4.5em;
+		color: $laranja;
+		font-weight: 300;
+		margin: 0;
+		line-height: $entrelinha-menor;
+	}
+
+	h2{
+		font-size: 1.5em;
+		color: $laranja;
+		font-weight: 300;
+		margin: 0;
+		line-height: $entrelinha-menor;
+		span{
+			font-weight: 700;
+		}
+	}
+
+	ul{
+		list-style: none;
+		padding-left: 0;
+
+		&.link-capa-intro, &.lista-artigos{
+			@include display(flex);
+			@include flex-wrap(wrap);
+			& > li{
+				width: calc(33.333333% - 1.333333em);
+				margin-right: 2em;
+				margin-bottom: 3em;
+				&:nth-child(3n){
+					margin-right: 0;
+				}
+				a{
+					text-decoration: none;
+					color: inherit;
+					h3{
+						// font-family: $fonte-corpo;
+						font-size: 1em;
+						font-weight: 800;
+						line-height: $entrelinha-menor;
+						margin: 0;
+						color: $laranja-claro;
+						@include transition(color 0.1s linear);
+					}
+
+					ul{
+						margin: 0;
+						color: $roxo-claro3;
+						@include transition(color 0.1s linear);
+						font-size: 0.9em;
+						li{
+							line-height: $entrelinha-menor;
+
+							&:last-child{
+								margin-top: 0.25em;
+								font-weight: bold;
+								
+							}
+						}
+					}
+
+					&:hover{
+						h3, ul{
+							color: $laranja;
+						}
+					}
+				}
+			}	
+		}
+
+
+		&.link-capa-intro{
+			& > li{
+				a{
+					h3{
+						font-size: 1.3em;
+						// font-weight: bold;
+					}
+				}
+			}
+		}
 	}
 }
 
@@ -169,6 +305,7 @@ header.header{
 			@include justify-content(space-between);
 			@include align-items(flex-start);
 			margin-bottom: 3em;
+			
 
 			a.logo{
 				height: 3.5em;
@@ -333,6 +470,8 @@ header.header{
 		@include transform(translateX(-50%));
 	}
 
+
+
 	&.fixo{
 		display: block;
 		position: fixed;
@@ -383,92 +522,43 @@ header.header{
 		.ler-artigo{
 			display: none;
 		}
-	}
-
-}
 
 
-
-#headerfixo{
-	
-	background-color: $roxo;
-
-	.container{
-		height: 100%;
-		position: relative;
-		@include display(flex);
-		@include align-items(center);	
-		@include justify-content(flex-end);
-		h1{
-			font-size: 0.9em;
-			padding-right: 2rem;
-			font-weight: 300;
-			color: $laranja;
-			white-space: nowrap;
-			overflow: hidden;
-			text-overflow: ellipsis;
-		}
-		nav{
-			@include flex-shrink(0);
-			height: 100%;
-			a, button{
-				@include display(inline-flex);
-				@include align-items(center);
-				// height: calc(100% - 1rem);
+		&.introducao{
+			// padding: 1em 0;
+			height: 3rem;
+			.container{
 				height: 100%;
-				margin-right: 0.3rem;
-				&:last-child{
-					margin-right: 0;
-				}
-				font-family: $fonte-titulo;
-				font-size: 0.8em;
-				line-height: 1;
-				text-transform: uppercase;
-				color: $laranja;
-				background-color: $roxo-escuro;
-				@include transition(all 0.2s linear);
-				@include transition-property(color, background-color);
-				text-decoration: none;
-
-				svg{
-					display: inline-block;
-					height: 0.7em;
-					path{
-						fill: $laranja;
-						@include transition(fill 0.2s linear);
-					}
-				}
-
-				&:hover{
-					color: white;
-
-					svg path{
-						fill: white;
-					}
-				}
+			}
+			.logo-e-sumario{
+				@include order(1);
+				@include display(flex);
+				@include align-items(center);
+				width: 100%;
+			}
+			a.logo{
+				display: block;
+				height: 2rem;
+				width: auto;
 			}
 
-			a{
-				width: 3rem;
-				@include justify-content(center);
-
-			}
-
-			button{
-				padding: 0 1em;
-				svg{
-					margin-right: 0.5em;
-				}
+			h1{
+				display: none;
 			}
 		}
 	}
+
 }
+
 
 
 
 main{
 	position: relative;
 	margin-top: 5em;
+	&.introducao{
+		margin-top: 7em;
+	}
 	article{
 		@extend .container;
 		@extend %estilo-texto;

@@ -16,7 +16,7 @@
 			}
 
 			& +{
-				h2,h3,h4,h5{
+				h1,h2,h3,h4,h5{
 					margin-top: 3rem;
 				}
 			}
@@ -64,27 +64,20 @@
 		}
 	}
 
-	h2,h3,h4,h5{
+	h1,h2,h3,h4,h5{
 		margin-bottom: 0.5rem;
 		line-height: $entrelinha-menor;
 	}
 
-	h2{
-		font-size: 2em;
-	}
+	h1{font-size: 3em; font-weight: 300;}
 
-	h3{
-		font-size: 1.5em;
-	}
+	h2{font-size: 2em;}
 
-	h4{
-		font-size: 1.2em;
-	}
+	h3{font-size: 1.5em;}
 
-	h5{
-		font-family: $fonte-corpo;
-		font-weight: bold;
-	}
+	h4{font-size: 1.2em;}
+
+	h5{font-family: $fonte-corpo; font-weight: bold;}
 
 	a{
 		&, &:visited, &:link{
@@ -103,6 +96,17 @@
 
 	figure{
 		margin: 2rem 0;
+		a, a:visited{
+			color: inherit;
+			box-shadow: none;
+			@include transition(none);
+			overflow-wrap: normal;
+			word-wrap: normal;
+			word-break: normal;
+			&:hover{
+				box-shadow: none;
+			}
+		}
 		a,img{
 			display: block;
 			max-width: 100%;
