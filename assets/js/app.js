@@ -113,6 +113,7 @@ jQuery(document).ready(function($) {
 		if ($(el).text().indexOf('>') !== -1 || $(el).text().indexOf('<') !== -1) {
 			temAviso = true;
 			todasMsgsErro.push(msgsErro.inicioTagEncontrado);
+			console.warn('TRECHO CONTENDO TAG NÃO FECHADA: \n\n' + $(el).text());
 			return false;
 		}
 	});
@@ -135,7 +136,7 @@ jQuery(document).ready(function($) {
 	 }
 
 	if (temAviso) {
-		var textoAviso = "Presta atenção, porra! Encontrei os seguintes erros na sua diagramação: \n\n• " + todasMsgsErro.join('\n• ');
+		var textoAviso = "Encontrei os seguintes erros na sua diagramação: \n\n• " + todasMsgsErro.join('\n• ') + "\n\nAbra o console de desenvolvimento para mais informações.";
 		window.alert(textoAviso);
 
 	}
