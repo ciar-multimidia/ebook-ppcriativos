@@ -4,6 +4,7 @@
 @import 'bourbon/bourbon';
 @import 'normalize';
 @import 'padroes';
+@import 'jquery.fancybox.min';
 @import 'texto';
 
 html{
@@ -93,7 +94,7 @@ header.capa{
 					display: block;
 					img{
 						display: block;
-						height: 2.5em;
+						height: 2.2em;
 					}
 				}
 

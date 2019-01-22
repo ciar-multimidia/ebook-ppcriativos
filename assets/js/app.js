@@ -76,6 +76,57 @@ jQuery(document).ready(function($) {
 	});
 
 
+	$.fancybox.defaults.buttons = [
+	    "zoom",
+	    "thumbs",
+	    "close"
+	]
+	$.fancybox.defaults.animationEffect = 'zoom';
+	$.fancybox.defaults.transitionEffect = 'slide';
+	$.fancybox.defaults.lang = 'pt_br';
+	$.fancybox.defaults.i18n = {
+	    pt_br: {
+	      CLOSE: "Fechar",
+	      NEXT: "Próximo",
+	      PREV: "Anterior",
+	      ERROR: "O conteúdo solicitado não pôde ser carregado. <br/> Por favor tente novamente mais tarde.",
+	      PLAY_START: "Começar slide",
+	      PLAY_STOP: "Pausar slide",
+	      FULL_SCREEN: "Tela cheia",
+	      THUMBS: "Thumbnails",
+	      DOWNLOAD: "Baixar",
+	      SHARE: "Compartilhar",
+	      ZOOM: "Zoom"
+	    }
+	}
+
+
+	var $galerias = $('.galeria-imagens');
+
+	$galerias.each(function(index, el) {
+		var $thisGaleria = $(el);
+		var $fotosGaleria = $thisGaleria.children('a');
+
+		$fotosGaleria.each(function(index2, el2) {
+			var srcimg = $(el2).find('img').attr('src');
+			var caption = $(el2).find('figcaption').html();
+			$(el2)
+			// .css('background-image', 'url(' + srcimg + ')')
+			.attr({
+				'href': srcimg,
+				'data-caption': caption,
+				'data-fancybox': 'galeria'+(index+1)
+			});
+		});
+
+
+		$fotosGaleria.on('click', function(event) {
+			$('this').fancybox();
+			/* Act on the event */
+		});
+	});
+
+
 
 	// Debugging
 
@@ -95,7 +146,7 @@ jQuery(document).ready(function($) {
 
 
 
-	var $figuras = $('main article figure');
+	var $figuras = $('main article > figure');
 
 	$figuras.each(function(index, el) {
 		var img = $(el).find('img');
