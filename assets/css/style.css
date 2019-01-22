@@ -1044,12 +1044,12 @@ main article > * {
   @media (max-width: 1000px) {
     main article > * {
       width: 100%; } }
-main article > *, main article aside > *, main article blockquote > *, main article #notas-de-rodape > div[data-nota] > * {
+main article > *, main article aside > *, main article blockquote > *, main article #notas-de-rodape > div[data-nota] > *, main article .box > * {
   margin: 0;
   margin-bottom: 1.5rem; }
-  main article > *:last-child, main article aside > *:last-child, main article blockquote > *:last-child, main article #notas-de-rodape > div[data-nota] > *:last-child {
+  main article > *:last-child, main article aside > *:last-child, main article blockquote > *:last-child, main article #notas-de-rodape > div[data-nota] > *:last-child, main article .box > *:last-child {
     margin-bottom: 0em; }
-  main article > * + h1, main article > * + h2, main article > * + h3, main article > * + h4, main article > * + h5, main article aside > * + h1, main article aside > * + h2, main article aside > * + h3, main article aside > * + h4, main article aside > * + h5, main article blockquote > * + h1, main article blockquote > * + h2, main article blockquote > * + h3, main article blockquote > * + h4, main article blockquote > * + h5, main article #notas-de-rodape > div[data-nota] > * + h1, main article #notas-de-rodape > div[data-nota] > * + h2, main article #notas-de-rodape > div[data-nota] > * + h3, main article #notas-de-rodape > div[data-nota] > * + h4, main article #notas-de-rodape > div[data-nota] > * + h5 {
+  main article > * + h1, main article > * + h2, main article > * + h3, main article > * + h4, main article > * + h5, main article aside > * + h1, main article aside > * + h2, main article aside > * + h3, main article aside > * + h4, main article aside > * + h5, main article blockquote > * + h1, main article blockquote > * + h2, main article blockquote > * + h3, main article blockquote > * + h4, main article blockquote > * + h5, main article #notas-de-rodape > div[data-nota] > * + h1, main article #notas-de-rodape > div[data-nota] > * + h2, main article #notas-de-rodape > div[data-nota] > * + h3, main article #notas-de-rodape > div[data-nota] > * + h4, main article #notas-de-rodape > div[data-nota] > * + h5, main article .box > * + h1, main article .box > * + h2, main article .box > * + h3, main article .box > * + h4, main article .box > * + h5 {
     margin-top: 3rem; }
 main article span.pagina {
   width: auto;
@@ -1189,6 +1189,12 @@ main article blockquote {
   margin: 3rem 0;
   padding-left: 2.5em;
   font-size: 0.9em; }
+main article .box {
+  margin: 2em 0;
+  padding: 2em;
+  border-left: 5px solid #f68e2f;
+  background-color: #fdf1e6;
+  color: #4d4d4d; }
 main article table {
   clear: right;
   margin: 3rem 0;
@@ -1212,6 +1218,7 @@ main article table {
     font-size: 0.9em; }
     main article table thead th {
       padding: 0.5em;
+      font-family: "Raleway", Tahoma, sans-serif;
       font-weight: bold;
       background-color: #F6CFAB;
       border-right: 1px solid rgba(0, 0, 0, 0.2); }
@@ -1220,8 +1227,9 @@ main article table {
   main article table tbody {
     font-size: 0.8em; }
     main article table tbody tr th, main article table tbody tr td {
-      border-bottom: 1px solid #cccccc;
-      border-right: 1px solid #f2f2f2; }
+      border: 1px solid #e6e6e6;
+      border-left-width: 0px;
+      border-top-width: 0px; }
       main article table tbody tr th ul, main article table tbody tr th ol, main article table tbody tr td ul, main article table tbody tr td ol {
         font-size: 1em;
         padding-left: 1.8em; }
@@ -1271,12 +1279,13 @@ main article section.galeria-imagens {
     justify-content: center;
     -ms-flex-pack: center;
     width: 25%;
-    height: 150px;
+    height: auto;
     background-size: cover;
     background-position: center center; }
     main article section.galeria-imagens a:hover {
       box-shadow: none; }
     main article section.galeria-imagens a figure {
+      margin: 0;
       display: -webkit-box;
       display: -moz-box;
       display: box;

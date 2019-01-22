@@ -7,7 +7,7 @@
 	}
 
 
-	&, aside, blockquote, #notas-de-rodape > div[data-nota]{
+	&, aside, blockquote, #notas-de-rodape > div[data-nota], .box{
 		& > *{
 			margin: 0;
 			margin-bottom: 1.5rem;
@@ -209,6 +209,14 @@
 		font-size: 0.9em;
 	}
 
+	.box{
+		margin: 2em 0;
+		padding: 2em;
+		border-left: 5px solid $laranja;
+		background-color: $laranja-muito-claro;
+		color: $cor-texto-claro;
+	}
+
 
 
 	table{
@@ -244,6 +252,7 @@
 			font-size: 0.9em;
 			th{
 				padding: 0.5em;
+				font-family: $fonte-titulo;
 				font-weight: bold;
 				background-color: $laranja-claro;
 				border-right: 1px solid transparentize(black, 0.8);
@@ -261,9 +270,9 @@
 						font-size: 1em;
 						padding-left: 1.8em;
 					}
-
-					border-bottom: 1px solid hsl(0,0%,80%);
-					border-right: 1px solid hsl(0,0%,95%);
+					border: 1px solid hsl(0,0%,90%);
+					border-left-width: 0px;
+					border-top-width: 0px;
 
 					&:last-child{
 						border-right: none;
@@ -287,11 +296,12 @@
 			@include align-items(center);
 			@include justify-content(center);
 			width: 25%;
-			height: 150px;
+			height: auto;
 			background-size: cover;
 			background-position: center center;
 
 			figure{
+				margin: 0;
 				@include display(flex);
 				@include align-items(center);
 				@include justify-content(center);
