@@ -243,8 +243,13 @@
 		thead{
 			font-size: 0.9em;
 			th{
+				padding: 0.5em;
 				font-weight: bold;
 				background-color: $laranja-claro;
+				border-right: 1px solid transparentize(black, 0.8);
+				&:last-child{
+					border-right: none;
+				}
 			}
 		}
 
@@ -256,11 +261,49 @@
 						font-size: 1em;
 						padding-left: 1.8em;
 					}
-				}
-				&:nth-child(even){
-					th,td{
-						background-color: hsl(0, 0%, 95%);
+
+					border-bottom: 1px solid hsl(0,0%,80%);
+					border-right: 1px solid hsl(0,0%,95%);
+
+					&:last-child{
+						border-right: none;
 					}
+				}
+			}
+		}
+	}
+
+	section.galeria-imagens{
+		@include display(flex);
+		@include flex-wrap(wrap);
+		width: 100%;
+		
+		a{
+			box-shadow: none;
+			&:hover{
+				box-shadow: none;
+			}
+			@include display(flex);
+			@include align-items(center);
+			@include justify-content(center);
+			width: 25%;
+			height: 150px;
+			background-size: cover;
+			background-position: center center;
+
+			figure{
+				@include display(flex);
+				@include align-items(center);
+				@include justify-content(center);
+				img{
+					display: block;
+					width: auto;
+					height: auto;
+					max-width: 100%;
+					max-height: 100%;
+				}
+				figcaption{
+					display: none;
 				}
 			}
 		}
