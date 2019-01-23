@@ -1723,7 +1723,7 @@ header.capa {
             font-size: 0.9em; }
             #sumario ul.link-capa-intro > li a ul li, #sumario ul.lista-artigos > li a ul li {
               line-height: 1.4; }
-              #sumario ul.link-capa-intro > li a ul li:last-child, #sumario ul.lista-artigos > li a ul li:last-child {
+              #sumario ul.link-capa-intro > li a ul li.orientador, #sumario ul.lista-artigos > li a ul li.orientador {
                 margin-top: 0.25em;
                 font-weight: bold; }
           #sumario ul.link-capa-intro > li a:hover h3, #sumario ul.link-capa-intro > li a:hover ul, #sumario ul.lista-artigos > li a:hover h3, #sumario ul.lista-artigos > li a:hover ul {

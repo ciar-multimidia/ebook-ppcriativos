@@ -217,7 +217,7 @@ header.capa{
 						li{
 							line-height: $entrelinha-menor;
 
-							&:last-child{
+							&.orientador{
 								margin-top: 0.25em;
 								font-weight: bold;
 								
