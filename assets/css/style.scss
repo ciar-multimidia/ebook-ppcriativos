@@ -429,7 +429,12 @@ header.header{
 							margin: 0;
 							padding-bottom: 1em;
 							font-size: 0.9em;
+							line-height: 1.6;
 							color: $laranja-claro;
+							a{
+								color: inherit;
+								font-weight: bold;
+							}
 						}
 
 						&.aberto{
