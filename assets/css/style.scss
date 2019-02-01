@@ -42,31 +42,34 @@ header.capa{
 
 		img.logocurso{
 			display: block;
-			height: 15em;
+			height: 10em;
 		}
 
 		div.org-e-marcas{
-			height: 15em;
+			height: 10em;
 			@include display(flex);
 			@include justify-content(space-between);
 			@include flex-direction(column);
 			
-			width: 50%;
+			width: 40%;
 			.org-edicao{
 				@include display(flex);
 				@include justify-content(space-between);
 				dl.organizacao{
 					margin: 0;
-					font-size: 1.5em;
 					line-height: $entrelinha-menor;
 					dt{
-						font-family: $fonte-titulo;
+						font-weight: bold;
 						color: $laranja;
+						text-transform: uppercase;
+						font-size: 0.8em;
 					}
 
 					dd{
+						font-size: 1.5em;
+						font-family: $fonte-titulo;
 						margin-left: 0;
-						color: white;
+						color: $laranja;
 					}
 				}
 
@@ -94,7 +97,7 @@ header.capa{
 					display: block;
 					img{
 						display: block;
-						height: 2.2em;
+						height: 1.8em;
 					}
 				}
 
@@ -276,10 +279,20 @@ header.header{
 			}
 		}
 
-		&:hover{
+		&:not([disabled]):hover{
 			color: white;
 			svg path{
 				fill: white;
+			}
+		}
+
+		&[disabled]{
+			pointer-events: none;
+			background-color: transparentize($roxo-escuro, 0.4);
+			svg{
+				path{
+					fill: $roxo-claro;
+				}
 			}
 		}
 	}
@@ -309,7 +322,7 @@ header.header{
 			
 
 			a.logo{
-				height: 3.5em;
+				height: 2.5em;
 				display: block;
 				img{
 					width: auto;
@@ -369,6 +382,9 @@ header.header{
 
 			.minicurriculos{
 				width: 35%;
+				&:only-child{
+					width: 60%;
+				}
 				h4{
 					margin: 0;
 					// margin-bottom: 1em;

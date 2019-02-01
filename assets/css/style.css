@@ -1479,9 +1479,9 @@ header.capa {
     margin-bottom: 5rem; }
     header.capa .logo-org-marcas img.logocurso {
       display: block;
-      height: 15em; }
+      height: 10em; }
     header.capa .logo-org-marcas div.org-e-marcas {
-      height: 15em;
+      height: 10em;
       display: -webkit-box;
       display: -moz-box;
       display: box;
@@ -1508,7 +1508,7 @@ header.capa {
       -moz-flex-direction: column;
       flex-direction: column;
       -ms-flex-direction: column;
-      width: 50%; }
+      width: 40%; }
       header.capa .logo-org-marcas div.org-e-marcas .org-edicao {
         display: -webkit-box;
         display: -moz-box;
@@ -1528,14 +1528,17 @@ header.capa {
         -ms-flex-pack: justify; }
         header.capa .logo-org-marcas div.org-e-marcas .org-edicao dl.organizacao {
           margin: 0;
-          font-size: 1.5em;
           line-height: 1.4; }
           header.capa .logo-org-marcas div.org-e-marcas .org-edicao dl.organizacao dt {
-            font-family: "Raleway", Tahoma, sans-serif;
-            color: #f68e2f; }
+            font-weight: bold;
+            color: #f68e2f;
+            text-transform: uppercase;
+            font-size: 0.8em; }
           header.capa .logo-org-marcas div.org-e-marcas .org-edicao dl.organizacao dd {
+            font-size: 1.5em;
+            font-family: "Raleway", Tahoma, sans-serif;
             margin-left: 0;
-            color: white; }
+            color: #f68e2f; }
         header.capa .logo-org-marcas div.org-e-marcas .org-edicao .edicao {
           padding: 0.6em;
           border: 1px solid #6F327F; }
@@ -1576,7 +1579,7 @@ header.capa {
           display: block; }
           header.capa .logo-org-marcas div.org-e-marcas .marcas a img {
             display: block;
-            height: 2.2em; }
+            height: 1.8em; }
         header.capa .logo-org-marcas div.org-e-marcas .marcas p {
           margin: 0;
           font-family: "Raleway", Tahoma, sans-serif;
@@ -1781,10 +1784,15 @@ header.header {
         -webkit-transition: fill 0.2s linear;
         -moz-transition: fill 0.2s linear;
         transition: fill 0.2s linear; }
-    header.header button.ler-artigo:hover, header.header a.sumario:hover, header.header a.next:hover, header.header a.prev:hover {
+    header.header button.ler-artigo:not([disabled]):hover, header.header a.sumario:not([disabled]):hover, header.header a.next:not([disabled]):hover, header.header a.prev:not([disabled]):hover {
       color: white; }
-      header.header button.ler-artigo:hover svg path, header.header a.sumario:hover svg path, header.header a.next:hover svg path, header.header a.prev:hover svg path {
+      header.header button.ler-artigo:not([disabled]):hover svg path, header.header a.sumario:not([disabled]):hover svg path, header.header a.next:not([disabled]):hover svg path, header.header a.prev:not([disabled]):hover svg path {
         fill: white; }
+    header.header button.ler-artigo[disabled], header.header a.sumario[disabled], header.header a.next[disabled], header.header a.prev[disabled] {
+      pointer-events: none;
+      background-color: rgba(30, 0, 37, 0.6); }
+      header.header button.ler-artigo[disabled] svg path, header.header a.sumario[disabled] svg path, header.header a.next[disabled] svg path, header.header a.prev[disabled] svg path {
+        fill: #500065; }
   header.header a.next, header.header a.prev {
     width: 3rem; }
     header.header a.next svg, header.header a.prev svg {
@@ -1821,7 +1829,7 @@ header.header {
     -ms-flex-align: start;
     margin-bottom: 3em; }
     header.header .container .logo-e-sumario a.logo, header.header main article .logo-e-sumario a.logo, main header.header article .logo-e-sumario a.logo {
-      height: 3.5em;
+      height: 2.5em;
       display: block; }
       header.header .container .logo-e-sumario a.logo img, header.header main article .logo-e-sumario a.logo img, main header.header article .logo-e-sumario a.logo img {
         width: auto;
@@ -1882,6 +1890,8 @@ header.header {
           margin-top: 1.5em; }
     header.header .container .resumo-e-mini .minicurriculos, header.header main article .resumo-e-mini .minicurriculos, main header.header article .resumo-e-mini .minicurriculos {
       width: 35%; }
+      header.header .container .resumo-e-mini .minicurriculos:only-child, header.header main article .resumo-e-mini .minicurriculos:only-child, main header.header article .resumo-e-mini .minicurriculos:only-child {
+        width: 60%; }
       header.header .container .resumo-e-mini .minicurriculos h4, header.header main article .resumo-e-mini .minicurriculos h4, main header.header article .resumo-e-mini .minicurriculos h4 {
         margin: 0;
         font-size: 1em;
