@@ -1937,7 +1937,11 @@ header.header {
             margin: 0;
             padding-bottom: 1em;
             font-size: 0.9em;
+            line-height: 1.6;
             color: #F6CFAB; }
+            header.header .container .resumo-e-mini .minicurriculos ul li p a, header.header main article .resumo-e-mini .minicurriculos ul li p a, main header.header article .resumo-e-mini .minicurriculos ul li p a {
+              color: inherit;
+              font-weight: bold; }
           header.header .container .resumo-e-mini .minicurriculos ul li.aberto h5, header.header main article .resumo-e-mini .minicurriculos ul li.aberto h5, main header.header article .resumo-e-mini .minicurriculos ul li.aberto h5 {
             color: #f68e2f; }
             header.header .container .resumo-e-mini .minicurriculos ul li.aberto h5:after, header.header main article .resumo-e-mini .minicurriculos ul li.aberto h5:after, main header.header article .resumo-e-mini .minicurriculos ul li.aberto h5:after {

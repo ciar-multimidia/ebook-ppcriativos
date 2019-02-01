@@ -131,66 +131,66 @@ jQuery(document).ready(function($) {
 	// Debugging
 
 
-	var temAviso = false;
+	// var temAviso = false;
 
-	var msgsErro = {
-		pathsDiferentesFiguras : "Algumas figuras estão com o caminho da imagem e do link diferentes",
-		imgSozinha : "Algumas figuras não possuem uma tag <a> envolvendo elas",
-		linkSozinhoFig : "Algumas figuras estão sem a tag <img>",
-		inicioTagEncontrado: "Encontrei um sinal de < ou de > no meio do texto, indicando que você provavelmente não fechou uma tag direito",
-		nsDiferentesNotas: "O número de notas de rodapé não bate com o número de botões que chamam as notas",
-		indexNotasErrado: "O atributo 'data-nota' das notas não batem com o dos botões"
-	}
+	// var msgsErro = {
+	// 	pathsDiferentesFiguras : "Algumas figuras estão com o caminho da imagem e do link diferentes",
+	// 	imgSozinha : "Algumas figuras não possuem uma tag <a> envolvendo elas",
+	// 	linkSozinhoFig : "Algumas figuras estão sem a tag <img>",
+	// 	inicioTagEncontrado: "Encontrei um sinal de < ou de > no meio do texto, indicando que você provavelmente não fechou uma tag direito",
+	// 	nsDiferentesNotas: "O número de notas de rodapé não bate com o número de botões que chamam as notas",
+	// 	indexNotasErrado: "O atributo 'data-nota' das notas não batem com o dos botões"
+	// }
 
-	var todasMsgsErro = [];
-
-
-
-	var $figuras = $('main article > figure');
-
-	$figuras.each(function(index, el) {
-		var img = $(el).find('img');
-		var anchorImg = $(el).find('a');
-
-		if (img.attr('src') !== anchorImg.attr('href')) {
-			temAviso = true;
-			todasMsgsErro.push(msgsErro.pathsDiferentesFiguras);
-			return false;
-		}
-	});
+	// var todasMsgsErro = [];
 
 
-	$('main article *').each(function(index, el) {
-		if ($(el).text().indexOf('>') !== -1 || $(el).text().indexOf('<') !== -1) {
-			temAviso = true;
-			todasMsgsErro.push(msgsErro.inicioTagEncontrado);
-			console.warn('TRECHO CONTENDO TAG NÃO FECHADA: \n\n' + $(el).text());
-			return false;
-		}
-	});
+
+	// var $figuras = $('main article > figure');
+
+	// $figuras.each(function(index, el) {
+	// 	var img = $(el).find('img');
+	// 	var anchorImg = $(el).find('a');
+
+	// 	if (img.attr('src') !== anchorImg.attr('href')) {
+	// 		temAviso = true;
+	// 		todasMsgsErro.push(msgsErro.pathsDiferentesFiguras);
+	// 		return false;
+	// 	}
+	// });
 
 
-	if (btNotas.length !== notasRodape.children('div[data-nota]').length) {
-		temAviso = true;
-		todasMsgsErro.push(msgsErro.nsDiferentesNotas);
-	}
+	// $('main article *').each(function(index, el) {
+	// 	if ($(el).text().indexOf('>') !== -1 || $(el).text().indexOf('<') !== -1) {
+	// 		temAviso = true;
+	// 		todasMsgsErro.push(msgsErro.inicioTagEncontrado);
+	// 		console.warn('TRECHO CONTENDO TAG NÃO FECHADA: \n\n' + $(el).text());
+	// 		return false;
+	// 	}
+	// });
 
-	 else if(btNotas.length > 0){
-	 	btNotas.each(function(index, el) {
+
+	// if (btNotas.length !== notasRodape.children('div[data-nota]').length) {
+	// 	temAviso = true;
+	// 	todasMsgsErro.push(msgsErro.nsDiferentesNotas);
+	// }
+
+	//  else if(btNotas.length > 0){
+	//  	btNotas.each(function(index, el) {
 	 	
-	 		if ($(el).data('nota') !== notasRodape.children('div[data-nota]').eq(index).data('nota')) {
-	 			temAviso = true;
-	 			todasMsgsErro.push(msgsErro.indexNotasErrado);
-	 			return false;
-	 		}
-	 	});
-	 }
+	//  		if ($(el).data('nota') !== notasRodape.children('div[data-nota]').eq(index).data('nota')) {
+	//  			temAviso = true;
+	//  			todasMsgsErro.push(msgsErro.indexNotasErrado);
+	//  			return false;
+	//  		}
+	//  	});
+	//  }
 
-	if (temAviso) {
-		var textoAviso = "Encontrei os seguintes erros na sua diagramação: \n\n• " + todasMsgsErro.join('\n• ') + "\n\nAbra o console de desenvolvimento para mais informações.";
-		window.alert(textoAviso);
+	// if (temAviso) {
+	// 	var textoAviso = "Encontrei os seguintes erros na sua diagramação: \n\n• " + todasMsgsErro.join('\n• ') + "\n\nAbra o console de desenvolvimento para mais informações.";
+	// 	window.alert(textoAviso);
 
-	}
+	// }
 
 });
 
